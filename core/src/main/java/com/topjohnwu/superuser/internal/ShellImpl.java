@@ -143,7 +143,7 @@ class ShellImpl extends Shell {
             STDIN.flush();
             String s = br.readLine();
             if (TextUtils.isEmpty(s) || !s.contains("SHELL_TEST"))
-                throw new IOException("Created process is not a shell");
+                throw new IOException("Created process is not a shell. echo SHELL_TEST output:" + s);
 
             STDIN.write(("id\n").getBytes(UTF_8));
             STDIN.flush();
